@@ -6,6 +6,12 @@ Use the tap by running:
 $ brew tap hmarr/tap
 ```
 
+Or if you've already tapped the tap:
+
+```console
+$ brew update
+```
+
 ### [Vitals](Casks/vitals.rb)
 
 Homebrew formula for the [Vitals](https://github.com/hmarr/vitals) app.
