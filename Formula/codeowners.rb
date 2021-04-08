@@ -5,20 +5,24 @@
 class Codeowners < Formula
   desc "Determine who owns what according CODEOWNERS files"
   homepage "https://github.com/hmarr/codeowners"
-  version "0.3.1"
+  version "0.3.2"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/hmarr/codeowners/releases/download/v0.3.1/codeowners_0.3.1_darwin_amd64.tar.gz"
-    sha256 "41f988380d76a0e87465779fc0a7ed957183dc40dc736f9708b74d036b1605dd"
+    url "https://github.com/hmarr/codeowners/releases/download/v0.3.2/codeowners_0.3.2_darwin_amd64.tar.gz"
+    sha256 "1c7dbfae857ba000b6eb74b46988744e0d1e500094ab1068a86bd91193836604"
+  end
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/hmarr/codeowners/releases/download/v0.3.2/codeowners_0.3.2_darwin_arm64.tar.gz"
+    sha256 "d621a46156f3987cd1975665b048392ad6de92699bd3181eb3d4370ea6150e77"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/hmarr/codeowners/releases/download/v0.3.1/codeowners_0.3.1_linux_amd64.tar.gz"
-    sha256 "50425f9b6541155dccdd9c9a21a6c58f964dcd74292ae9292684090268c77a47"
+    url "https://github.com/hmarr/codeowners/releases/download/v0.3.2/codeowners_0.3.2_linux_amd64.tar.gz"
+    sha256 "dbfceb8cdb0ad1c2a5bae9783753696ef6b77c1a2977643847c1398b5a35bfe3"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/hmarr/codeowners/releases/download/v0.3.1/codeowners_0.3.1_linux_arm64.tar.gz"
-    sha256 "af57e0ebcea851d5e5d34dbd9ce8c61fc61798f8ea2ab0abf65035b29a748965"
+    url "https://github.com/hmarr/codeowners/releases/download/v0.3.2/codeowners_0.3.2_linux_arm64.tar.gz"
+    sha256 "17c1c9ff5dbed58fc30c6ab364a74c908e07699995e592fce8db206226fc5118"
   end
 
   def install
