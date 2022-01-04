@@ -6,7 +6,6 @@ class Codeowners < Formula
   desc "Determine who owns what according CODEOWNERS files"
   homepage "https://github.com/hmarr/codeowners"
   version "0.3.2"
-  bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/hmarr/codeowners/releases/download/v0.3.2/codeowners_0.3.2_darwin_amd64.tar.gz"
