@@ -5,26 +5,43 @@
 class Codeowners < Formula
   desc "Determine who owns what according CODEOWNERS files"
   homepage "https://github.com/hmarr/codeowners"
-  version "0.3.2"
+  version "0.4.0"
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/hmarr/codeowners/releases/download/v0.3.2/codeowners_0.3.2_darwin_amd64.tar.gz"
-    sha256 "1c7dbfae857ba000b6eb74b46988744e0d1e500094ab1068a86bd91193836604"
-  end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/hmarr/codeowners/releases/download/v0.3.2/codeowners_0.3.2_darwin_arm64.tar.gz"
-    sha256 "d621a46156f3987cd1975665b048392ad6de92699bd3181eb3d4370ea6150e77"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/hmarr/codeowners/releases/download/v0.3.2/codeowners_0.3.2_linux_amd64.tar.gz"
-    sha256 "dbfceb8cdb0ad1c2a5bae9783753696ef6b77c1a2977643847c1398b5a35bfe3"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/hmarr/codeowners/releases/download/v0.3.2/codeowners_0.3.2_linux_arm64.tar.gz"
-    sha256 "17c1c9ff5dbed58fc30c6ab364a74c908e07699995e592fce8db206226fc5118"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/hmarr/codeowners/releases/download/v0.4.0/codeowners_0.4.0_darwin_arm64.tar.gz"
+      sha256 "65c66ab4aa807f049d04cf77238b1feb19355e2a3c7dc98aab888b68d97992da"
+
+      def install
+        bin.install "codeowners"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/hmarr/codeowners/releases/download/v0.4.0/codeowners_0.4.0_darwin_amd64.tar.gz"
+      sha256 "ec8ed132a1cb02cf0f28243f041b391a1cbfcd5e5fc0d70433d5b8dfe6440a91"
+
+      def install
+        bin.install "codeowners"
+      end
+    end
   end
 
-  def install
-    bin.install "codeowners"
+  on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/hmarr/codeowners/releases/download/v0.4.0/codeowners_0.4.0_linux_arm64.tar.gz"
+      sha256 "3d5d963b84a624259e142f259f768f678510f6b881df8f20caafae21500346ed"
+
+      def install
+        bin.install "codeowners"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/hmarr/codeowners/releases/download/v0.4.0/codeowners_0.4.0_linux_amd64.tar.gz"
+      sha256 "0720ce3fcf01d565b6d18856ef4dc7858a5e540a9d538f1e615dc1224852352f"
+
+      def install
+        bin.install "codeowners"
+      end
+    end
   end
 end
