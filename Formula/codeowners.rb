@@ -5,20 +5,20 @@
 class Codeowners < Formula
   desc "Determine who owns what according CODEOWNERS files"
   homepage "https://github.com/hmarr/codeowners"
-  version "1.0.0"
+  version "1.1.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/hmarr/codeowners/releases/download/v1.0.0/codeowners_1.0.0_darwin_amd64.tar.gz"
-      sha256 "edfa8631ec36cc3053167b65067141f97b98d0d6687e64eb19f6ba63a3617780"
+    if Hardware::CPU.arm?
+      url "https://github.com/hmarr/codeowners/releases/download/v1.1.0/codeowners_1.1.0_darwin_arm64.tar.gz"
+      sha256 "4af34376d868c6c0e1548acdffa832d7fa8ea2b532fd43ef93fadf048d715b9b"
 
       def install
         bin.install "codeowners"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/hmarr/codeowners/releases/download/v1.0.0/codeowners_1.0.0_darwin_arm64.tar.gz"
-      sha256 "f23f8f38a7a5525f933c5bd92827e8156f27ee45842e49ecb9033fb28ca9343b"
+    if Hardware::CPU.intel?
+      url "https://github.com/hmarr/codeowners/releases/download/v1.1.0/codeowners_1.1.0_darwin_amd64.tar.gz"
+      sha256 "dd84b503c1c700dc1587152df9c74d4146def2bc7317bd5a740c9f1c3dcc8373"
 
       def install
         bin.install "codeowners"
@@ -28,16 +28,16 @@ class Codeowners < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hmarr/codeowners/releases/download/v1.0.0/codeowners_1.0.0_linux_arm64.tar.gz"
-      sha256 "45fcf19f83b28efc920dedc0baa1a2f4bfd8d26546a4a4e9a334927faf56e347"
+      url "https://github.com/hmarr/codeowners/releases/download/v1.1.0/codeowners_1.1.0_linux_arm64.tar.gz"
+      sha256 "1f22ef187373f7f8a057c718ded064fa2254d5b9605fbfa8c97e3ff2e5f38dfc"
 
       def install
         bin.install "codeowners"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/hmarr/codeowners/releases/download/v1.0.0/codeowners_1.0.0_linux_amd64.tar.gz"
-      sha256 "e5fa475a922296f34bf2538bf5c7e17168f8cb25fb34e9b3ab1d33589d827ba2"
+      url "https://github.com/hmarr/codeowners/releases/download/v1.1.0/codeowners_1.1.0_linux_amd64.tar.gz"
+      sha256 "4999ba4ae6617f127de9a234fec6d0cf0132bddfc13fcedf45b9bcb95b27cb02"
 
       def install
         bin.install "codeowners"
